@@ -13,11 +13,11 @@
     "title": "Réinitialisation du mot de passe",
     "userNameOrEmail": "Identifiant ou email",
     "goToSignIn": "Aller à ma page de connexion",
-	"setNewPassword": "Définir un nouveau mot de passe", 
-	"resetPassword": "Réinitialiser le mot de passe",
-	"changePassword": "Changer le mot de passe", 
-	"requestPasswordReset": "Demander la réinitialisation du mot de passe",
-	"requestPasswordResetSuccess": "Nous avons envoyé les instructions de réinitialisation de votre mot de passe sur votre adresse e-mail.",
-	"resetPasswordSuccess": "Votre mot de passe a été modifié avec succès.",
+    "setNewPassword": "Définir un nouveau mot de passe",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "changePassword": "Changer le mot de passe",
+    "requestPasswordReset": "Demander la réinitialisation du mot de passe",
+    "requestPasswordResetSuccess": "Nous avons envoyé les instructions de réinitialisation de votre mot de passe sur votre adresse e-mail.",
+    "resetPasswordSuccess": "Votre mot de passe a été modifié avec succès."
   }
 }
