@@ -17,7 +17,8 @@
       <Password
         v-if="resetToken!=null"
         v-model="password"
-        :label="$t('resetPassword.newPassword')"
+        :labelPassword="$t('resetPassword.newPassword')"
+        :labelPasswordConfirmation="$t('resetPassword.newPasswordConfirmation')"
         :confirmation="true"/>
 
       <v-btn

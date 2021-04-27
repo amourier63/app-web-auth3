@@ -20,6 +20,7 @@
         v-model="newPassword"
         :confirmation="true"
         :labelPassword="$t('changePassword.newPassword')"
+        :labelPasswordConfirmation="$t('changePassword.newPasswordConfirmation')"
         :id="'newPassword'"
       />
       <v-btn
