@@ -1,5 +1,5 @@
 module.exports = {
-    locale: 'en',
+    locale: navigator.language.split('-')[0],
     fallbackLocale: 'en',
     enableInSFC: true
 }

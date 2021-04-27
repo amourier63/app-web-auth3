@@ -19,5 +19,11 @@
     "requestPasswordReset": "Demander la réinitialisation du mot de passe",
     "requestPasswordResetSuccess": "Nous avons envoyé les instructions de réinitialisation de votre mot de passe sur votre adresse e-mail.",
     "resetPasswordSuccess": "Votre mot de passe a été modifié avec succès."
+  },
+  "password": {
+    "password": "Mot de passe",
+	"passwordConfirmation": "Confirmation du mot de passe",
+    "passwordIsRequired": "Mot de passe requis.",
+    "passwordConfirmationNotMatch": "La confirmation du mot de passe ne correspond pas."
   }
 }

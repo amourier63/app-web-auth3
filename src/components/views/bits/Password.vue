@@ -6,7 +6,7 @@
       :appendIcon="visiblePass ? 'lock_open' : 'lock'"
       :type="visiblePass ? 'text' : 'password'"
       :rules="[rules.required]"
-      :label="label"
+      :label="labelPassword"
       @input="$emit('input', $event)"
       @click:append="() => (visiblePass = !visiblePass)"/>
 
@@ -16,28 +16,31 @@
       v-model="repass"
       :type="visiblePass ? 'text' : 'password'"
       :rules="[matchPassword]"
-      :label="`${label} confirmation`"/>
+      :label="labelPasswordConfirmation"/>
   </div>
 </template>
 
 <script>
+import i18n from '../../../i18n';
+
 export default {
   props: {
     confirmation: {type: Boolean, default: false},
     value: {type: String, default: ''},
-    label: {type: String, default: 'Password'},
+    labelPassword: {type: String, default: i18n.t('password.password')},
+    labelPasswordConfirmation: {type: String, default: i18n.t('password.passwordConfirmation')},
     id: {type: String, default: 'password'},
   },
   data: () => ({
     visiblePass: false,
     repass: '',
     rules: {
-      required: value => !!value || 'Password is required.',
+      required: value => !!value || i18n.t('password.passwordIsRequired'),
     },
   }),
   computed: {
     matchPassword: function () {
-      return this.value === this.repass || 'Password confirmation does not match.';
+      return this.value === this.repass || i18n.t('password.passwordConfirmationNotMatch');
     },
   },
 };

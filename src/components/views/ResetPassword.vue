@@ -12,7 +12,7 @@
         id="usernameOrEmail"
         v-model="ctx.user.username"
         :rules="[rules.required]"
-        label="$t('resetPassword.userNameOrEmail')"/>
+        :label="$t('resetPassword.userNameOrEmail')"/>
 
       <Password
         v-if="resetToken!=null"
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import i18n from '../../i18n';
 import Password from './bits/Password';
 import Alerts from './bits/Alerts';
 import Context from '../../context.js';
@@ -68,10 +69,10 @@ export default {
   }),
   computed: {
     pageTitle: function () {
-      return this.resetToken ? i18n.t('resetPassword.setNewPassword') : i18n.t('resetPassword.resetPassword');
+      return this.resetToken ? i18n.t('resetPassword.resetPassword') : i18n.t('resetPassword.setNewPassword');
     },
     buttonText: function () {
-      return this.resetToken ? i18n.t('resetPassword.changePassword') : i18n.t('resetPassword.requestPasswordReset');
+      return this.resetToken ? i18n.t('resetPassword.requestPasswordReset') : i18n.t('resetPassword.changePassword');
     },
   },
   async created () {

@@ -19,5 +19,11 @@
     "requestPasswordReset": "Request password reset",
     "requestPasswordResetSuccess": "We have sent password reset instructions to your e-mail address.",
     "resetPasswordSuccess": "Your password have been successfully changed."
+  },
+  "password": {
+    "password": "Password",
+    "passwordConfirmation": "Password confirmation",
+    "passwordIsRequired": "Password is required.",
+    "passwordConfirmationNotMatch": "Password confirmation does not match."
   }
-} 
+}
