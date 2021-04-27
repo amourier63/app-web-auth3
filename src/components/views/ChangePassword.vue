@@ -42,7 +42,7 @@ import Password from './bits/Password';
 import Alerts from './bits/Alerts';
 import controllerFactory from '../controller/controller.js';
 import Context from '../../context.js';
-
+ 
 export default {
   components: {
     Password,
