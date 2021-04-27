@@ -12,12 +12,12 @@
   "resetPassword": {
     "title": "Reset password",
     "userNameOrEmail": "Username or email",
-    "goToSignIn": "Go to sign in", 
-    "setNewPassword": "Set a new password", 
+    "goToSignIn": "Go to sign in",
+    "setNewPassword": "Set a new password",
     "resetPassword": "Reset password",
-    "changePassword": "Change password", 
+    "changePassword": "Change password",
     "requestPasswordReset": "Request password reset",
     "requestPasswordResetSuccess": "We have sent password reset instructions to your e-mail address.",
-    "resetPasswordSuccess": "Your password have been successfully changed.",
+    "resetPasswordSuccess": "Your password have been successfully changed."
   }
 } 
