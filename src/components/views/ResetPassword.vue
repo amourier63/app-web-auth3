@@ -17,6 +17,7 @@
       <Password
         v-if="resetToken!=null"
         v-model="password"
+        :label="$t('resetPassword.newPassword')"
         :confirmation="true"/>
 
       <v-btn
@@ -69,10 +70,10 @@ export default {
   }),
   computed: {
     pageTitle: function () {
-      return this.resetToken ? i18n.t('resetPassword.resetPassword') : i18n.t('resetPassword.setNewPassword');
+      return this.resetToken ? i18n.t('resetPassword.setNewPassword') : i18n.t('resetPassword.resetPassword');
     },
     buttonText: function () {
-      return this.resetToken ? i18n.t('resetPassword.requestPasswordReset') : i18n.t('resetPassword.changePassword');
+      return this.resetToken ? i18n.t('resetPassword.defineNewPassword') : i18n.t('resetPassword.requestPasswordReset');
     },
   },
   async created () {
@@ -90,7 +91,7 @@ export default {
           this.c.requestResetPassword()
             .then(() => {
               this.showForm = false;
-              this.success = i18n.t('global.requestPasswordResetSuccess');
+              this.success = i18n.t('resetPassword.requestPasswordResetSuccess');
             })
             .catch(this.showError)
             .finally(() => { this.submitting = false; });
@@ -99,7 +100,7 @@ export default {
           this.c.resetPassword(this.password, this.resetToken)
             .then(() => {
               this.showForm = false;
-              this.success = i18n.t('global.resetPasswordSuccess');
+              this.success = i18n.t('resetPassword.resetPasswordSuccess');
             })
             .catch(this.showError)
             .finally(() => { this.submitting = false; });

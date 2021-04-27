@@ -16,7 +16,7 @@
       v-model="repass"
       :type="visiblePass ? 'text' : 'password'"
       :rules="[matchPassword]"
-      :label="labelPasswordConfirmation"/>
+      :label="$t('password.passwordConfirmation', {password: labelPassword})"/>
   </div>
 </template>
 
@@ -28,7 +28,6 @@ export default {
     confirmation: {type: Boolean, default: false},
     value: {type: String, default: ''},
     labelPassword: {type: String, default: i18n.t('password.password')},
-    labelPasswordConfirmation: {type: String, default: i18n.t('password.passwordConfirmation')},
     id: {type: String, default: 'password'},
   },
   data: () => ({

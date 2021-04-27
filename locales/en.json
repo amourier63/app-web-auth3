@@ -12,18 +12,27 @@
   "resetPassword": {
     "title": "Reset password",
     "userNameOrEmail": "Username or email",
+    "newPassword": "New password",
     "goToSignIn": "Go to sign in",
     "setNewPassword": "Set a new password",
     "resetPassword": "Reset password",
-    "changePassword": "Change password",
+    "defineNewPassword": "Define new password",
     "requestPasswordReset": "Request password reset",
     "requestPasswordResetSuccess": "We have sent password reset instructions to your e-mail address.",
     "resetPasswordSuccess": "Your password have been successfully changed."
   },
   "password": {
     "password": "Password",
-    "passwordConfirmation": "Password confirmation",
+    "passwordRename": "{password}",
+    "passwordConfirmation": "@.password.passwordRename confirmation",
     "passwordIsRequired": "Password is required.",
     "passwordConfirmationNotMatch": "Password confirmation does not match."
+  },
+  "changePassword": {
+    "title": "Change password",
+    "userNameOrEmail": "Username or email",
+    "requestPasswordChange": "Request password change",
+    "changePasswordSuccess": "Your password has been successfully changed.",
+    "newPassword": "New password"
   }
-}
+} 

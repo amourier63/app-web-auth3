@@ -12,18 +12,27 @@
   "resetPassword": {
     "title": "Réinitialisation du mot de passe",
     "userNameOrEmail": "Identifiant ou email",
+    "newPassword": "Nouveau mot de passe",
     "goToSignIn": "Aller à ma page de connexion",
     "setNewPassword": "Définir un nouveau mot de passe",
     "resetPassword": "Réinitialiser le mot de passe",
-    "changePassword": "Changer le mot de passe",
+    "defineNewPassword": "Définir le nouveau mot de passe",
     "requestPasswordReset": "Demander la réinitialisation du mot de passe",
     "requestPasswordResetSuccess": "Nous avons envoyé les instructions de réinitialisation de votre mot de passe sur votre adresse e-mail.",
     "resetPasswordSuccess": "Votre mot de passe a été modifié avec succès."
   },
   "password": {
     "password": "Mot de passe",
-	"passwordConfirmation": "Confirmation du mot de passe",
+    "passwordRename": "{password}",
+    "passwordConfirmation": "Confirmation du @.lower:password.passwordRename",
     "passwordIsRequired": "Mot de passe requis.",
     "passwordConfirmationNotMatch": "La confirmation du mot de passe ne correspond pas."
+  },
+  "changePassword": {
+    "title": "Changer le mot de passe",
+    "userNameOrEmail": "Identifiant ou email",
+    "requestPasswordChange": "Demander un changement de mot de passe",
+    "changePasswordSuccess": "Votre mot de passe a été changé avec succès.",
+    "newPassword": "Nouveau mot de passe"
   }
 }
