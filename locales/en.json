@@ -1,7 +1,11 @@
 {
   "lang": "English",
   "global": {
-    "requiredField": "This field is required."
+    "requiredField": "This field is required.",
+    "errorUnknownUsername": "Unknown username",
+    "errorUnknownEmail": "Unknown email",
+    "errorInvalidUsername": "Invalid username",
+    "errorInvalidPassword": "Invalid password"
   },
   "signinHub": {
     "title": "Signin Hub",
@@ -54,4 +58,3 @@
     "content": "The page you are looking for is like time in quantum gravity theories, it does not exist."
   }
 }
-
