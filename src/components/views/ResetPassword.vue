@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ pageTitle }}</h1>
+    <h1>{{ $t('resetPassword.title') }}</h1>
 
     <v-form
       v-if="showForm"
@@ -12,11 +12,13 @@
         id="usernameOrEmail"
         v-model="ctx.user.username"
         :rules="[rules.required]"
-        label="Username or email"/>
+        :label="$t('resetPassword.userNameOrEmail')"/>
 
       <Password
         v-if="resetToken!=null"
         v-model="password"
+        :labelPassword="$t('resetPassword.newPassword')"
+        :labelPasswordConfirmation="$t('resetPassword.newPasswordConfirmation')"
         :confirmation="true"/>
 
       <v-btn
@@ -30,7 +32,7 @@
     -->
     <div v-if="ctx.isAccessRequest()">
       <v-divider class="mt-3 mb-2"/>
-      <router-link :to="{ name: 'Authorization' }"><h3>Go to Sign in</h3></router-link>
+      <router-link :to="{ name: 'Authorization' }"><h3>{{ $t('resetPassword.goToSignIn') }}</h3></router-link>
     </div>
 
     <Alerts
@@ -40,6 +42,7 @@
 </template>
 
 <script>
+import i18n from '../../i18n';
 import Password from './bits/Password';
 import Alerts from './bits/Alerts';
 import Context from '../../context.js';
@@ -62,16 +65,16 @@ export default {
     ctx: {},
     c: null,
     rules: {
-      required: value => !!value || 'This field is required.',
+      required: value => !!value || i18n.t('global.requiredField'),
     },
     validForm: false,
   }),
   computed: {
     pageTitle: function () {
-      return this.resetToken ? 'Set a new password' : 'Reset password';
+      return this.resetToken ? i18n.t('resetPassword.setNewPassword') : i18n.t('resetPassword.resetPassword');
     },
     buttonText: function () {
-      return this.resetToken ? 'Change password' : 'Request password reset';
+      return this.resetToken ? i18n.t('resetPassword.defineNewPassword') : i18n.t('resetPassword.requestPasswordReset');
     },
   },
   async created () {
@@ -89,7 +92,7 @@ export default {
           this.c.requestResetPassword()
             .then(() => {
               this.showForm = false;
-              this.success = 'We have sent password reset instructions to your e-mail address.';
+              this.success = i18n.t('resetPassword.requestPasswordResetSuccess');
             })
             .catch(this.showError)
             .finally(() => { this.submitting = false; });
@@ -98,7 +101,7 @@ export default {
           this.c.resetPassword(this.password, this.resetToken)
             .then(() => {
               this.showForm = false;
-              this.success = 'Your password have been successfully changed.';
+              this.success = i18n.t('resetPassword.resetPasswordSuccess');
             })
             .catch(this.showError)
             .finally(() => { this.submitting = false; });

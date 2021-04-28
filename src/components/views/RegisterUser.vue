@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Register a new user</h1>
+    <h1>{{ $t('registerUser.title') }}</h1>
 
     <v-form
       v-if="newUser==null"
@@ -12,15 +12,15 @@
       <v-text-field
         id="email"
         v-model="email"
-        label="E-mail"
-        placeholder="Optional (required for password reset)"
+        :label="$t('registerUser.email')"
+        :placeholder="$t('registerUser.emailPlaceholder')"
       />
 
       <v-text-field
         id="username"
         v-model="ctx.user.username"
         :rules="[rules.required]"
-        label="Username"
+        :label="$t('registerUser.username')"
       />
 
       <Password
@@ -32,20 +32,20 @@
         v-model="hosting"
         :items="hostingsSelection"
         :rules="[rules.required]"
-        placeholder="Choose hosting..."
-        label="Hosting"
+        :label="$t('registerUser.hosting')"
+        :placeholder="$t('registerUser.hostingPlaceholder')"
       />
 
       <v-btn
         id="submitButton"
         :disabled="!validForm||submitting"
         @click="submit"
-      >Create</v-btn>
+      >{{ $t('registerUser.create') }}</v-btn>
 
       <v-btn
         id="clearButton"
         @click="clear"
-      >Clear</v-btn>
+      >{{ $t('registerUser.clear') }}</v-btn>
 
       <div>
         By registering you agree with our
@@ -57,7 +57,7 @@
     </v-form>
     <div v-if="ctx.isAccessRequest()">
       <v-divider class="mt-3 mb-2"/>
-      <router-link :to="{ name: 'Authorization' }"><h3>Go to Sign in</h3></router-link>
+      <router-link :to="{ name: 'Authorization' }"><h3>{{ $t('registerUser.goToSignIn') }}</h3></router-link>
     </div>
 
     <Alerts
@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import i18n from '../../i18n';
 import Password from './bits/Password.vue';
 import Alerts from './bits/Alerts.vue';
 import Context from '../../context.js';
@@ -89,7 +90,7 @@ export default {
     error: '',
     success: '',
     rules: {
-      required: value => !!value || 'This field is required.',
+      required: value => !!value || i18n.t('global.requiredField'),
     },
     validForm: false,
   }),
@@ -118,7 +119,7 @@ export default {
         this.c.createUser(availableCore, this.password, this.email, this.hosting)
           .then((newUser) => {
             this.newUser = newUser;
-            this.success = `New user successfully created: ${newUser.username}.`;
+            this.success = i18n.t('registerUser.registerSuccess', {username: newUser.username});
             if (!this.ctx.isAccessRequest()) {
               location.href = this.ctx.pryvService.apiEndpointForSync(newUser.username);
             }

@@ -1,0 +1,57 @@
+{
+  "lang": "English",
+  "global": {
+    "requiredField": "This field is required."
+  },
+  "signinHub": {
+    "title": "Signin Hub",
+    "userNameOrEmail": "Username or email",
+    "goToHomePage": "go to my homepage",
+    "signupMsg": "new to {serviceName} ? Create an account"
+  },
+  "resetPassword": {
+    "title": "Reset password",
+    "userNameOrEmail": "Username or email",
+    "newPassword": "New password",
+    "newPasswordConfirmation": "New password confirmation",
+    "goToSignIn": "Go to sign in",
+    "setNewPassword": "Set a new password",
+    "resetPassword": "Reset password",
+    "defineNewPassword": "Define new password",
+    "requestPasswordReset": "Request password reset",
+    "requestPasswordResetSuccess": "We have sent password reset instructions to your e-mail address.",
+    "resetPasswordSuccess": "Your password have been successfully changed."
+  },
+  "password": {
+    "password": "Password",
+    "passwordRename": "{password}",
+    "passwordConfirmation": "@.password.passwordRename confirmation",
+    "passwordIsRequired": "Password is required.",
+    "passwordConfirmationNotMatch": "Password confirmation does not match."
+  },
+  "changePassword": {
+    "title": "Change password",
+    "userNameOrEmail": "Username or email",
+    "requestPasswordChange": "Request password change",
+    "changePasswordSuccess": "Your password has been successfully changed.",
+    "newPassword": "New password",
+    "newPasswordConfirmation": "New password confirmation"
+  },
+  "registerUser": {
+    "title": "Register a new user",
+    "email": "E-mail",
+    "emailPlaceholder": "Optional (required for password reset)",
+    "username": "Username",
+    "hosting": "Hosting",
+    "hostingPlaceholder": "Choose hosting...",
+    "clear": "Clear",
+    "create": "Create",
+    "goToSignIn": "Go to sign in",
+    "registerSuccess": "New user successfully created: {username}."
+  },
+  "pageNotFound": {
+    "title": "404 - Page not found",
+    "content": "The page you are looking for is like time in quantum gravity theories, it does not exist."
+  }
+}
+

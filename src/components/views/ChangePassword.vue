@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Change password</h1>
+    <h1>{{ $t('changePassword.title') }}</h1>
     <v-form
       v-if="showForm"
       ref="form"
@@ -10,7 +10,7 @@
         id="usernameOrEmail"
         v-model="ctx.user.username"
         :rules="[rules.required]"
-        label="Username or email"/>
+        :label="$t('changePassword.userNameOrEmail')"/>
       <Password
         v-model="oldPassword"
         :confirmation="false"
@@ -19,14 +19,15 @@
       <Password
         v-model="newPassword"
         :confirmation="true"
-        :label="'New password'"
+        :labelPassword="$t('changePassword.newPassword')"
+        :labelPasswordConfirmation="$t('changePassword.newPasswordConfirmation')"
         :id="'newPassword'"
       />
       <v-btn
         id="submitButton"
         :disabled="!validForm || submitting"
         @click="submit"
-      >REQUEST PASSWORD CHANGE</v-btn
+      >{{ $t('changePassword.requestPasswordChange') }}</v-btn
       >
     </v-form>
     <Alerts
@@ -36,6 +37,7 @@
 </template>
 
 <script>
+import i18n from '../../i18n';
 import Password from './bits/Password';
 import Alerts from './bits/Alerts';
 import controllerFactory from '../controller/controller.js';
@@ -56,7 +58,7 @@ export default {
     ctx: {},
     controllerFactory: null,
     rules: {
-      required: (value) => !!value || 'This field is required.',
+      required: (value) => !!value || i18n.t('global.requiredField'),
     },
     validForm: false,
   }),
@@ -75,7 +77,7 @@ export default {
             .changePassword(this.oldPassword, this.newPassword))
           .then(() => {
             this.showForm = false;
-            this.success = 'Your password has been successfully changed.';
+            this.success = i18n.t('changePassword.changePasswordSuccess');
           })
           .catch(this.showError)
           .finally(() => {

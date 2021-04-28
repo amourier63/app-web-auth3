@@ -1,0 +1,56 @@
+{
+  "lang": "Français",
+  "global": {
+    "requiredField": "Ce champ est requis."
+  },
+  "signinHub": {
+    "title": "Signin Hub",
+    "userNameOrEmail": "Identifiant ou email",
+    "goToHomePage": "aller à ma page d'entrée",
+    "signupMsg": "nouveau sur {serviceName} ? Creez un compte."
+  },
+  "resetPassword": {
+    "title": "Réinitialisation du mot de passe",
+    "userNameOrEmail": "Identifiant ou email",
+    "newPassword": "Nouveau mot de passe",
+    "newPasswordConfirmation": "Confirmation du nouveau mot de passe",
+    "goToSignIn": "Aller à ma page de connexion",
+    "setNewPassword": "Définir un nouveau mot de passe",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "defineNewPassword": "Définir le nouveau mot de passe",
+    "requestPasswordReset": "Demander la réinitialisation du mot de passe",
+    "requestPasswordResetSuccess": "Nous avons envoyé les instructions de réinitialisation de votre mot de passe sur votre adresse e-mail.",
+    "resetPasswordSuccess": "Votre mot de passe a été modifié avec succès."
+  },
+  "password": {
+    "password": "Mot de passe",
+    "passwordConfirmation": "Confirmation du mot de passe",
+    "passwordIsRequired": "Mot de passe requis.",
+    "passwordConfirmationNotMatch": "La confirmation du mot de passe ne correspond pas."
+  },
+  "changePassword": {
+    "title": "Changer le mot de passe",
+    "userNameOrEmail": "Identifiant ou email",
+    "requestPasswordChange": "Modifier le mot de passe",
+    "changePasswordSuccess": "Votre mot de passe a été modifié avec succès.",
+    "newPassword": "Nouveau mot de passe",
+    "newPasswordConfirmation": "Confirmation du nouveau mot de passe"
+  },
+  "registerUser": {
+    "title": "Enregistrer un nouvel utilisateur",
+    "email": "E-mail",
+    "emailPlaceholder": "Facultatif (requis pour la réinitialisation du mot de passe)",
+    "username": "Identifiant",
+    "hosting": "Hébergeur",
+    "hostingPlaceholder": "Choisissez l'hébergement...",
+    "clear": "Réinitialiser",
+    "create": "Créer",
+    "goToSignIn": "Aller à ma page de connexion",
+    "registerSuccess": "Nouvel utilisateur créé avec succès: {username}."
+  },
+  "pageNotFound": {
+    "title": "404 - Page introuvable",
+    "content": ""
+  }
+}
+
