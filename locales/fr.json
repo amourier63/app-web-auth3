@@ -35,5 +35,22 @@
     "changePasswordSuccess": "Votre mot de passe a été modifié avec succès.",
     "newPassword": "Nouveau mot de passe",
     "newPasswordConfirmation": "Confirmation du nouveau mot de passe"
+  },
+  "registerUser": {
+    "title": "Enregistrer un nouvel utilisateur",
+    "email": "E-mail",
+    "emailPlaceholder": "Facultatif (requis pour la réinitialisation du mot de passe)",
+    "username": "Identifiant",
+    "hosting": "Hébergeur",
+    "hostingPlaceholder": "Choisissez l'hébergement...",
+    "clear": "Réinitialiser",
+    "create": "Créer",
+    "goToSignIn": "Aller à ma page de connexion",
+    "registerSuccess": "Nouvel utilisateur créé avec succès: {username}."
+  },
+  "pageNotFound": {
+    "title": "404 - Page introuvable",
+    "content": ""
   }
 }
+
