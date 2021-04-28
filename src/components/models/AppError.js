@@ -1,6 +1,7 @@
 // @flow
 
 type SubErrorData = {
+  id: ?string,
   message: string,
   detail: ?string,
 };
@@ -8,6 +9,7 @@ type SubErrorData = {
 type SubErrors = Array<SubErrorData>;
 
 type ValidationError = {
+  id: ?string,
   code: ?string,
   message: string,
   param: ?string,
@@ -15,6 +17,7 @@ type ValidationError = {
 }
 
 type EncapsulatedError = {
+  id: ?string,
   message: string,
   detail: ?string,
   data: ?any,
@@ -22,6 +25,7 @@ type EncapsulatedError = {
 }
 
 type ErrorData = {
+  id: ?string,
   message: ?string,
   detail: ?string,
   errors: ?SubErrors,
@@ -35,10 +39,12 @@ type UnparsedError = {
 }
 
 class AppError {
+  id: string;
   msg: string;
 
   constructor (error: string | UnparsedError) {
     this.msg = this.parseError(error);
+    this.id = this.parseMainErrorId(error);
   }
 
   parseError (error: string | UnparsedError): string {
@@ -60,7 +66,6 @@ class AppError {
     let errorMsg = `<b>${this.parseErrorData(encapsulatedError || errorData)}</b>`;
 
     // Parse additional sub errors
-
     const subErrors = encapsulatedError ? encapsulatedError.body : errorData.errors;
     errorMsg += this.parseSubErrors(subErrors);
 
@@ -71,6 +76,23 @@ class AppError {
     }
 
     return errorMsg;
+  }
+
+  parseMainErrorId (error: string | UnparsedError): string {
+    // Error is a simple string
+    if (typeof error === 'string') {
+      return error;
+    }
+
+    // Error is lacking of information, declare it as unexpected
+    if (error == null || error.response == null || error.response.body == null) {
+      return '';
+    }
+
+    // Parse main error id.
+    const errorData = error.response.body;
+    const encapsulatedError = errorData.error;
+    return this.parseErrorId(encapsulatedError || errorData);
   }
 
   parseValidationSubErrors (subErrors: ?Array<ValidationError>): string {
@@ -95,6 +117,10 @@ class AppError {
 
   parseErrorData (errorData: ErrorData | EncapsulatedError | SubErrorData): string {
     return errorData.detail || errorData.message || this.unexpectedError();
+  }
+
+  parseErrorId (errorData: ErrorData | EncapsulatedError | SubErrorData): string {
+    return errorData.id || '';
   }
 
   unexpectedError (): string {

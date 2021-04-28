@@ -109,7 +109,18 @@ export default {
       }
     },
     showError (error) {
-      this.error = error.msg;
+      console.log(error);
+      if (error.id === 'UNKNOWN_EMAIL') {
+        this.error = i18n.t('global.errorUnknownEmail');
+      } else if (error.id === 'UNKNOWN_USER_NAME') {
+        this.error = i18n.t('global.errorUnknownUsername');
+      } else if (error.id === 'INVALID_USER_NAME') {
+        this.error = i18n.t('global.errorInvalidUsername');
+      } else if (error.id === 'invalid-parameters-format') {
+        this.error = i18n.t('global.errorInvalidPassword');
+      } else {
+        this.error = error.msg;
+      }
     },
   },
 };

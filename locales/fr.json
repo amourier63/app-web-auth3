@@ -1,7 +1,11 @@
 {
   "lang": "Français",
   "global": {
-    "requiredField": "Ce champ est requis."
+    "requiredField": "Ce champ est requis.",
+    "errorUnknownUsername": "Identifiant inconnu",
+    "errorUnknownEmail": "Email inconnu",
+    "errorInvalidUsername": "Identifiant invalide",
+    "errorInvalidPassword": "Password invalide"
   },
   "signinHub": {
     "title": "Signin Hub",
@@ -53,4 +57,3 @@
     "content": ""
   }
 }
-
