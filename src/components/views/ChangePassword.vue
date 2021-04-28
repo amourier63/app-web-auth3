@@ -35,7 +35,7 @@
       :errorMsg="error" />
   </div>
 </template>
- 
+
 <script>
 import i18n from '../../i18n';
 import Password from './bits/Password';
